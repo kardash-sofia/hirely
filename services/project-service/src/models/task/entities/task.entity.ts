@@ -1,6 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { BaseEntity } from '../../../common/base/base.entity';
 import { Project } from '../../project/entities/project.entity';
+import { TaskStatus } from '../constants';
 
 @Entity('tasks')
 export class Task extends BaseEntity {
@@ -17,8 +18,8 @@ export class Task extends BaseEntity {
   @Column({ nullable: true })
   description: string;
 
-  @Column()
-  status: string;
+  @Column({ type: 'enum', enum: TaskStatus, default: TaskStatus.TODO })
+  status: TaskStatus;
 
   @Column()
   priority: number;

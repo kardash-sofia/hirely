@@ -3,6 +3,7 @@ import { BaseEntity } from '../../../common/base/base.entity';
 import { ProjectCategory } from '../../project-category/entities/project-category.entity';
 import { ProjectTechnology } from '../../project-technology/entities/project-technology.entity';
 import { Task } from '../../task/entities/task.entity';
+import { ProjectStatus } from '../constants';
 
 @Entity('projects')
 export class Project extends BaseEntity {
@@ -21,8 +22,8 @@ export class Project extends BaseEntity {
   @Column({ type: 'int', nullable: true })
   budgetMax: number;
 
-  @Column()
-  status: string;
+  @Column({ type: 'enum', enum: ProjectStatus, default: ProjectStatus.OPEN })
+  status: ProjectStatus;
 
   @Column({ type: 'date', nullable: true })
   dueDate: Date;
