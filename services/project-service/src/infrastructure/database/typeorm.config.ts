@@ -21,3 +21,7 @@ export const typeOrmConfig: DataSourceOptions = {
 // for migration generation
 //   entities: ['src/**/*.entity.ts'],
 //   migrations: ['src/infrastructure/database/migrations/*.ts'],
+
+// for runtime
+//   entities: ['dist/**/*.entity.js'],
+//   migrations: ['dist/infrastructure/database/migrations/*.js'],

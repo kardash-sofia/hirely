@@ -12,10 +12,10 @@ export class ProjectTechnology {
   technologyId: string;
 
   @ManyToOne(() => Project, p => p.projectTechnologies, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'project_id' })
+  @JoinColumn({ name: 'projectId' })
   project: Project;
 
   @ManyToOne(() => Technology, t => t.projectTechnologies, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'technology_id' })
+  @JoinColumn({ name: 'technologyId' })
   technology: Technology;
 }

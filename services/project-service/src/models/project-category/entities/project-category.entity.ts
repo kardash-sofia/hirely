@@ -12,10 +12,10 @@ export class ProjectCategory {
   categoryId: string;
 
   @ManyToOne(() => Project, p => p.projectCategories, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'project_id' })
+  @JoinColumn({ name: 'projectId' })
   project: Project;
 
   @ManyToOne(() => Category, c => c.projectCategories, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'category_id' })
+  @JoinColumn({ name: 'categoryId' })
   category: Category;
 }
