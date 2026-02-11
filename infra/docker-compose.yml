@@ -25,7 +25,6 @@ services:
     ports:
       - "5434:5432"
 
-  # User Service
   user-service:
     build:
       context: ../services/user-service
@@ -38,7 +37,6 @@ services:
     ports:
       - "4002:3000"
 
-  # User Database
   user-db:
     image: postgres:16
     container_name: user-db
@@ -52,7 +50,18 @@ services:
     ports:
       - "5433:5432"
 
-# Volumes для збереження даних
+  gateway-service:
+    build:
+      context: ../services/gateway-service
+      dockerfile: Dockerfile
+    container_name: gateway-service
+    env_file:
+      - ../services/gateway-service/.env
+    depends_on:
+      - project-service
+    ports:
+      - "4000:3000"
+
 volumes:
   project_pg_data:
   user_pg_data:
