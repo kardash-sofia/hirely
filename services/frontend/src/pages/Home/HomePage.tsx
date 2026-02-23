@@ -1,5 +1,13 @@
+import { Banner } from "./Banner"
+import { Features } from "./Features"
+import { TabsSection } from "./TabsSection"
+
 export const HomePage = () => {
   return (
-    <div>Home Page</div>
+    <>
+      <Banner />
+      <Features />
+      <TabsSection />
+    </>
   )
 }

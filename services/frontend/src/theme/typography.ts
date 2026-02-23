@@ -20,7 +20,10 @@ export const typography = {
     fontSize: '40px',
     fontWeight: 400,
   },
-
+  subtitle1: {
+    fontSize: '25px',
+    fontWeight: 100,
+  },
   body1: {
     fontSize: '20px',
     fontWeight: 700,
